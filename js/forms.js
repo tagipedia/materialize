@@ -514,6 +514,11 @@
       var uniqueID = Materialize.guid();
       $select.attr('data-select-id', uniqueID);
       var wrapper = $('<div class="select-wrapper"></div>');
+      // trick from https://github.com/Dogfalo/materialize/issues/6322#issuecomment-479157272
+      // to fix Chrome 73 bug
+      wrapper.click(function(e){
+        e.stopPropagation();
+      })
       wrapper.addClass($select.attr('class'));
       if ($select.is(':disabled'))
         wrapper.addClass('disabled');
