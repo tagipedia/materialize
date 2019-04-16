@@ -9014,7 +9014,7 @@ if (Vel) {
     // Set position
     this.locate();
     this.isShown = true;
-    setTimeout(()=>{
+    setTimeout(function(){
       // Hide when clicking or tabbing on any element except the clock and input
       $doc.on('click.clockpicker.' + this.id + ' focusin.clockpicker.' + this.id, function (e) {
         var target = $(e.target);
